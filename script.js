@@ -45,3 +45,18 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+function game() {
+    let score = 0;
+    for (let i = 0; i < 5; i++) {
+        console.log(`Round ${i + 1}`);
+        let playerSelection = prompt("Choose rock, paper, or scissors");
+        result = playRound(playerSelection, computerPlay());
+        console.log(result);
+        if (result.slice(4, 5) === "W") {
+            score++;
+            console.log(`You are now at ${score} points`);
+        }
+    }
+    console.log(`Game set! You scored ${score} points!`);
+}
