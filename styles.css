@@ -1,0 +1,31 @@
+body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btns {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    font-size: 16px;
+}
+
+.display-score {
+    justify-content: center;
+    font-size: 24px;
+}
+
+.result {
+    margin-top: 16px;
+    font-size: 32px;
+    justify-content: center;
+}
+
+.display-score {
+    display: flex;
+    gap: 32px;
+}
