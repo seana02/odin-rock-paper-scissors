@@ -58,22 +58,29 @@ function game() {
     console.log(`Game set! You scored ${score} points!`);
 }
 
-// identify DOM elements
+// initialize variables
 const btns = document.querySelectorAll('button');
 const resulttxt = document.querySelector('.result');
 const score = document.querySelector('.score');
 const count = document.querySelector('.count');
 const rate = document.querySelector('.rate');
+let won = 0;
+let played = 0;
 
 // initialize event listeners
 btns.forEach(btn => btn.addEventListener('click', function(e) {
-    count.textContent = +count.textContent + 1;
+    // count.textContent = +count.textContent + 1;
+    played++;
+    count.textContent = played;
     const result = playRound(btn.classList[1], computerPlay());
     resulttxt.textContent = result;
     if (result.slice(4, 5) === "W") {
-        score.textContent = +score.textContent + 1;
+        // score.textContent = +score.textContent + 1;
+        won++;
+        score.textContent = won;
     }
-    let winrate = Math.round(1000 * +score.textContent / +count.textContent) / 10;
+    // let winrate = Math.round(1000 * +score.textContent / +count.textContent) / 10;
+    let winrate = Math.round(1000 * won / played) / 10;
     rate.textContent = winrate;
 }));
 
